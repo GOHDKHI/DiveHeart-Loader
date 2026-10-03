@@ -1,0 +1,35 @@
+This mod manager will remain closed source, there is no guarntee it'll ever be open source.
+
+1. Extract the entire Windows ZIP, then run `DiveHeart.exe`. Keep `_internal`
+   beside the executable. Microsoft Edge WebView2 Runtime is required.
+2. Open Launch settings. Confirm Steam and the Helldivers 2 folder, then Save.
+3. Import a ZIP containing patch files or a native plugin. DiveHeart detects
+   the contents automatically; no extraction or hand-written manifest is
+   required. Existing manifests and plugin dependencies are kept. Loose patch
+   triplets and native x64 DLLs are also accepted.
+4. Enable mods, choose their options, and set load order in the right sidebar.
+5. Review & apply patches, inspect its file list, then Apply. Close the game
+   before deployment. A profile change alone does not change game data files.
+   When only native extensions are enabled and no old DiveHeart patches need
+   removal, no patch application is needed. Interrupted transactions show
+   **Repair deployment** directly in the sidebar.
+6. Set additional game arguments in DiveHeart's Launch settings. DiveHeart
+   supplies the selected profile's directory arguments automatically.
+7. Launch Helldivers 2. DiveHeart opens Steam for its game services and starts
+   the installed game executable with SteamAppId/SteamGameId 553850 and its own
+   argument list. Saved Steam Properties arguments are not appended or changed.
+   Steam must be signed in. This new launch path still needs an actual game test;
+   starting the process alone does not prove that mods loaded. DiveHeart supplies
+   the stock `--bundle-dir data --release` arguments with the install root as its
+   working directory. Steam does not show a custom-arguments prompt for this path.
+8. Click **Check launch status** after startup. Patch rows verify deployed files
+   against the launch receipt; they do not prove engine consumption. Alpha reports
+   **Engine startup confirmed for this launch** only when new startup log entries
+   match this game PID. Other extensions remain unconfirmed unless their startup
+   format is recognized. An exited game process shows its exit code while this
+   DiveHeart instance remains open. Status checks run only when clicked.
+
+
+**SAFETY NOTICE:**
+This mod manager will remain closed source and as non invasive to mods and modders as possible. The purpose of this mod manager to allow you to play with all kinds of mods the game can natively support.
+As with any software or mod, please be careful with what you download, especially Lua or Native execution mods.
